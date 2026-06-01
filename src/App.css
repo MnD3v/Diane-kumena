@@ -163,8 +163,6 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 12px;
-  animation: fadeUp 0.65s ease both;
-  animation-delay: 0.08s;
 }
 
 .hero-title-strong {
