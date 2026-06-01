@@ -67,6 +67,43 @@ function Cursor() {
   )
 }
 
+// ── Loader ───────────────────────────────────────────────────────
+function Loader({ onDone }) {
+  const [leaving, setLeaving] = useState(false)
+  const fillRef = useRef(null)
+
+  useEffect(() => {
+    const complete = () => {
+      if (fillRef.current) {
+        fillRef.current.style.transition = 'width 0.35s ease'
+        fillRef.current.style.width = '100%'
+      }
+      setTimeout(() => {
+        setLeaving(true)
+        setTimeout(onDone, 850)
+      }, 450)
+    }
+
+    if (document.readyState === 'complete') {
+      setTimeout(complete, 400)
+    } else {
+      window.addEventListener('load', complete, { once: true })
+    }
+  }, [onDone])
+
+  return (
+    <div className={`loader${leaving ? ' loader--out' : ''}`}>
+      <div className="loader-inner">
+        <p className="loader-name">Diane K</p>
+        <p className="loader-sub">Designer <em>&</em> Community Manager</p>
+      </div>
+      <div className="loader-track">
+        <div ref={fillRef} className="loader-fill" />
+      </div>
+    </div>
+  )
+}
+
 // ── Barre de progression ─────────────────────────────────────────
 function ScrollProgress() {
   const barRef = useRef(null)
@@ -132,6 +169,7 @@ function Lightbox({ index, onClose, onPrev, onNext }) {
 
 // ── App ──────────────────────────────────────────────────────────
 function App() {
+  const [ready, setReady] = useState(false)
   const [lightboxIndex, setLightboxIndex] = useState(null)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -170,6 +208,7 @@ function App() {
 
   return (
     <div>
+      {!ready && <Loader onDone={() => setReady(true)} />}
       <Cursor />
       <ScrollProgress />
 
@@ -356,6 +395,26 @@ function App() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Entreprises ── */}
+      <section className="entreprises">
+        <div className="entreprises-inner">
+          <p className="entreprises-label" data-reveal>Ils m'ont fait confiance</p>
+          <div className="entreprises-logos" data-reveal>
+            <div className="entreprise-item">
+              <img src="/images/entreprises/isla.png"      alt="ISLA"              className="entreprise-logo" />
+            </div>
+            <div className="entreprise-sep" />
+            <div className="entreprise-item">
+              <img src="/images/entreprises/lafiatech.png" alt="LAFIATECH"         className="entreprise-logo" />
+            </div>
+            <div className="entreprise-sep" />
+            <div className="entreprise-item">
+              <img src="/images/entreprises/panpas.jpg"    alt="PANPAS Immobilier" className="entreprise-logo" />
+            </div>
           </div>
         </div>
       </section>
