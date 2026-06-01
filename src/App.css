@@ -3,6 +3,8 @@
   --pink-light: #A3BCFF;
   --pink-pale: rgba(91, 127, 255, 0.12);
   --pink-glow: rgba(91, 127, 255, 0.25);
+  --yellow: #FFD60A;
+  --yellow-pale: rgba(255, 214, 10, 0.12);
   --black: #0a0a0a;
   --black-2: #111111;
   --white: #ffffff;
@@ -205,7 +207,7 @@
   color: var(--pink-light);
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.3px;
   text-transform: uppercase;
   padding: 8px 18px;
   border-radius: 100px;
@@ -217,7 +219,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--pink);
+  background: var(--yellow);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -266,12 +268,12 @@
   animation-delay: 0.24s;
 }
 
-/* Emphase inline dans le corps (Shilmaz italic) */
+/* Emphase inline dans le corps — Poppins gras */
 .text-em {
-  font-family: 'Shilmaz', serif;
-  font-style: italic;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 700;
   color: var(--pink-light);
-  font-size: 1em;
 }
 
 .hero-actions {
@@ -407,7 +409,7 @@
   font-family: 'Shilmaz', serif;
   font-size: 30px;
   font-weight: 700;
-  color: var(--pink-light);
+  color: var(--yellow);
   line-height: 1;
   margin-bottom: 4px;
 }
@@ -443,7 +445,7 @@
 .marquee-track span {
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 3.5px;
+  letter-spacing: 0.5px;
   color: #3a3a3a;
   text-transform: uppercase;
 }
@@ -595,9 +597,9 @@
 .entreprises-label {
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: 3px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: var(--grey);
+  color: var(--yellow);
 }
 
 .entreprises-logos {
@@ -693,7 +695,7 @@
 .realisations-sub {
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 0.3px;
   text-transform: uppercase;
   color: var(--grey);
   white-space: nowrap;
@@ -758,8 +760,8 @@
   font-family: 'Shilmaz', serif;
   font-size: 11px;
   font-weight: normal;
-  letter-spacing: 3px;
-  color: var(--pink);
+  letter-spacing: 0.5px;
+  color: var(--yellow);
   margin-bottom: 8px;
   display: block;
 }
@@ -774,7 +776,7 @@
 
 .card-arrow {
   font-size: 18px;
-  color: var(--pink);
+  color: var(--yellow);
   align-self: flex-end;
   line-height: 1;
 }
@@ -864,7 +866,7 @@
 .lb-counter {
   font-family: 'Shilmaz', serif;
   font-size: 12px;
-  letter-spacing: 2px;
+  letter-spacing: 0.3px;
   color: var(--pink);
   white-space: nowrap;
 }
@@ -981,9 +983,9 @@
 .cta-eyebrow {
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 3px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: var(--pink);
+  color: var(--yellow);
 }
 
 .cta-title {
@@ -1101,15 +1103,15 @@
   display: block;
   width: 36px;
   height: 1px;
-  background: var(--pink);
+  background: var(--yellow);
 }
 
 .section-label-text {
   font-size: 12px;
   font-weight: 500;
-  letter-spacing: 3px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: var(--pink);
+  color: var(--yellow);
 }
 
 /* ─── Statement ──────── */
@@ -1358,7 +1360,7 @@
 .footer-col-title {
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 2.5px;
+  letter-spacing: 0.3px;
   text-transform: uppercase;
   color: var(--grey);
   margin-bottom: 20px;
