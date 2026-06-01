@@ -84,10 +84,13 @@ function Loader({ onDone }) {
       }, 450)
     }
 
-    if (document.readyState === 'complete') {
+    const img = new Image()
+    img.src = '/images/Diane Kumena.png'
+    if (img.complete) {
       setTimeout(complete, 400)
     } else {
-      window.addEventListener('load', complete, { once: true })
+      img.onload  = complete
+      img.onerror = complete
     }
   }, [onDone])
 
