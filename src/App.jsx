@@ -253,18 +253,7 @@ function App() {
 
         <div className="hero-content">
           <div className="hero-text">
-            {/* Nom lettre par lettre */}
-            <p className="hero-name" aria-label="Diane KUMENA">
-              {[["D","i","a","n","e"], ["K","U","M","E","N","A"]].map((word, wi) => (
-                <span key={wi} className="name-word">
-                  {word.map((char, ci) => (
-                    <span key={ci} className="name-char" style={{ '--i': wi === 0 ? ci : 6 + ci }}>
-                      {char}
-                    </span>
-                  ))}
-                </span>
-              ))}
-            </p>
+            <p className="hero-name">Diane KUMENA</p>
 
             <h1 className="hero-title" data-reveal>
               Je crée des expériences<br />

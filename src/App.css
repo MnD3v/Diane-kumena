@@ -230,11 +230,14 @@
   font-weight: normal;
   line-height: 1;
   letter-spacing: 1px;
+  white-space: nowrap;
   background: linear-gradient(120deg, var(--white) 40%, var(--pink-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 12px;
+  animation: nameReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.05s;
 }
 
 .hero-title-strong {
@@ -1586,29 +1589,10 @@ body::after {
 .realisations-grid [data-reveal]:nth-child(8) { transition-delay: 0.49s; }
 .realisations-grid [data-reveal]:nth-child(9) { transition-delay: 0.56s; }
 
-/* ── Nom lettre par lettre ──────────────────────────────────── */
 
-.hero-name {
-  overflow: visible;
-}
-
-.name-word {
-  display: inline;
-}
-
-.name-word + .name-word {
-  margin-left: 0.22em;
-}
-
-.name-char {
-  display: inline;
-  opacity: 0;
-  animation: charReveal 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: calc(var(--i) * 0.045s + 0.1s);
-}
-
-@keyframes charReveal {
-  to { opacity: 1; }
+@keyframes nameReveal {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ── Orbes hero animés ──────────────────────────────────────── */
